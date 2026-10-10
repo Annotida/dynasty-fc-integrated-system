@@ -1,3 +1,7 @@
+/* ============================================================
+   DYNASTY FC — GLOBAL STYLESHEET
+   ============================================================ */
+
 :root {
     --navy: #0a1a33;
     --navy-deep: #060f1f;
@@ -29,6 +33,39 @@ body {
     overflow-x: hidden;
 }
 
+/* ============================================================
+   FULL-PAGE BACKGROUND (for pages using .bg-image class)
+   ============================================================ */
+body.bg-image {
+    background: #0a1a33 url('/images/updates-hero.jpeg') no-repeat center center;
+    background-size: cover;
+    background-attachment: scroll;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+}
+
+body.bg-image::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 15, 35, 0.45) 0%,
+        rgba(5, 15, 35, 0.55) 100%
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+body.bg-image > * {
+    position: relative;
+    z-index: 1;
+}
+
 .container {
     max-width: 1200px;
     margin: auto;
@@ -40,7 +77,9 @@ a {
     text-decoration: none;
 }
 
-/* NAVIGATION */
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
 .navbar {
     position: fixed;
     top: 0;
@@ -154,7 +193,9 @@ a {
     cursor: pointer;
 }
 
-/* HERO SECTION */
+/* ============================================================
+   HERO SECTION (Homepage)
+   ============================================================ */
 .hero {
     position: relative;
     isolation: isolate;
@@ -283,8 +324,7 @@ a {
     font-weight: 800;
     letter-spacing: 1px;
     text-transform: uppercase;
-    transition: transform .25s, background .25s, color .25s,
-                box-shadow .25s;
+    transition: transform .25s, background .25s, color .25s, box-shadow .25s;
 }
 
 .btn-hero:hover {
@@ -317,7 +357,9 @@ a {
     animation: bounceDown 1.8s ease-in-out infinite;
 }
 
-/* SECTION HEADINGS */
+/* ============================================================
+   SECTION HEADINGS
+   ============================================================ */
 .section-header {
     max-width: 760px;
     margin: 0 auto 48px;
@@ -353,7 +395,9 @@ a {
     line-height: 1.7;
 }
 
-/* STATISTICS */
+/* ============================================================
+   STATISTICS
+   ============================================================ */
 .stats-section {
     padding: 58px 20px;
     color: #fff;
@@ -395,13 +439,14 @@ a {
     font-size: 12px;
 }
 
-/* MORE THAN JUST FOOTBALL */
+/* ============================================================
+   MORE THAN JUST FOOTBALL
+   ============================================================ */
 .why-section {
     padding: 90px 24px;
     background: #fff;
 }
 
-/* TEAM NEWS, UPCOMING EVENTS AND GALLERY */
 .home-highlights {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -471,7 +516,9 @@ a {
     color: var(--gold-soft);
 }
 
-/* TESTIMONIALS */
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
 .testimonials-section {
     padding: 90px 24px;
     background: var(--light);
@@ -545,7 +592,9 @@ a {
     transform: scale(1.25);
 }
 
-/* FOOTER */
+/* ============================================================
+   FOOTER
+   ============================================================ */
 .footer {
     padding: 35px 0 22px;
     border-top: 1px solid #ffffff0d;
@@ -580,7 +629,9 @@ a {
     letter-spacing: .6px;
 }
 
-/* REVEAL ANIMATIONS */
+/* ============================================================
+   REVEAL ANIMATIONS
+   ============================================================ */
 .reveal {
     opacity: 0;
     transform: translateY(22px);
@@ -593,93 +644,54 @@ a {
 }
 
 @keyframes slideLogoIn {
-    from {
-        opacity: 0;
-        transform: translateX(-45px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(-45px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes slideTextIn {
-    from {
-        opacity: 0;
-        transform: translateX(35px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+    from { opacity: 0; transform: translateX(35px); }
+    to { opacity: 1; transform: translateX(0); }
 }
 
 @keyframes gentleFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-7px);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
 }
 
 @keyframes bounceDown {
-    0%, 100% {
-        transform: translate(-50%, 0);
-    }
-    50% {
-        transform: translate(-50%, 8px);
-    }
+    0%, 100% { transform: translate(-50%, 0); }
+    50% { transform: translate(-50%, 8px); }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-/* TABLET */
+/* ============================================================
+   TABLET
+   ============================================================ */
 @media (max-width: 1100px) {
-    .nav-container {
-        padding: 0 22px;
-    }
-
-    .nav-menu {
-        gap: 3px;
-    }
-
-    .nav-menu a {
-        padding: 8px 9px;
-        font-size: 12px;
-    }
-
-    .hero-inner {
-        gap: 35px;
-    }
-
-    .hero-logo {
-        max-width: 300px;
-    }
+    .nav-container { padding: 0 22px; }
+    .nav-menu { gap: 3px; }
+    .nav-menu a { padding: 8px 9px; font-size: 12px; }
+    .hero-inner { gap: 35px; }
+    .hero-logo { max-width: 300px; }
 }
 
-/* MOBILE NAVIGATION AND LAYOUT */
+/* ============================================================
+   MOBILE NAVIGATION AND LAYOUT
+   ============================================================ */
 @media (max-width: 820px) {
     .menu-toggle {
         display: block !important;
         margin-left: auto;
         z-index: 2;
     }
-
     .nav-container {
         flex-wrap: wrap;
         position: relative;
     }
-
     .nav-menu {
         display: none !important;
         width: 100%;
@@ -689,111 +701,62 @@ a {
         padding: 10px 0 5px;
         order: 3;
     }
-
-    .nav-menu.open {
-        display: flex !important;
-    }
-
+    .nav-menu.open { display: flex !important; }
     .nav-menu a {
         display: block;
         padding: 10px 12px;
         text-align: center;
     }
-
     .nav-menu a.login-btn {
         margin: 4px auto;
         width: 140px;
     }
 
-    .hero {
-        padding: 125px 24px 65px;
-    }
-
+    .hero { padding: 125px 24px 65px; }
     .hero-inner {
         grid-template-columns: 1fr;
         gap: 20px;
         text-align: center;
     }
-
-    .hero-logo {
-        max-width: 210px;
-        max-height: 260px;
-    }
-
-    .hero-content {
-        text-align: center;
-    }
-
-    .hero-content h1 {
-        font-size: clamp(34px, 7vw, 48px);
-    }
-
+    .hero-logo { max-width: 210px; max-height: 260px; }
+    .hero-content { text-align: center; }
+    .hero-content h1 { font-size: clamp(34px, 7vw, 48px); }
     .hero-content p {
         margin-left: auto;
         margin-right: auto;
     }
-
-    .hero-buttons {
-        justify-content: center;
-    }
+    .hero-buttons { justify-content: center; }
 
     .stats-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
     }
-
     .home-highlights {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-/* SMALL MOBILE */
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
 @media (max-width: 520px) {
-    .nav-container {
-        padding: 0 16px;
-    }
-
-    .nav-logo img {
-        height: 43px;
-    }
-
-    .club-name {
-        font-size: 19px;
-    }
-
-    .tagline {
-        font-size: 8px;
-        letter-spacing: 2px;
-    }
+    .nav-container { padding: 0 16px; }
+    .nav-logo img { height: 43px; }
+    .club-name { font-size: 19px; }
+    .tagline { font-size: 8px; letter-spacing: 2px; }
 
     .hero {
         min-height: 100svh;
         padding: 115px 18px 60px;
     }
-
-    .hero-logo {
-        max-width: 165px;
-        max-height: 205px;
-    }
-
-    .hero-subtitle {
-        font-size: 9px;
-        letter-spacing: 1.8px;
-    }
-
-    .hero-content h1 {
-        font-size: 31px;
-    }
-
-    .hero-content p {
-        font-size: 15px;
-    }
-
+    .hero-logo { max-width: 165px; max-height: 205px; }
+    .hero-subtitle { font-size: 9px; letter-spacing: 1.8px; }
+    .hero-content h1 { font-size: 31px; }
+    .hero-content p { font-size: 15px; }
     .hero-buttons {
         flex-direction: column;
         gap: 10px;
     }
-
     .btn-hero {
         width: 100%;
         max-width: 280px;
@@ -806,54 +769,26 @@ a {
     .testimonials-section {
         padding: 65px 18px;
     }
+    .stats-container { gap: 8px; }
+    .stat-number { font-size: 31px; }
+    .stat-label { font-size: 11px; letter-spacing: 1px; }
+    .stat-sub { font-size: 11px; }
 
-    .stats-container {
-        gap: 8px;
-    }
+    .home-highlights { grid-template-columns: 1fr; }
+    .section-header { margin-bottom: 32px; }
+    .section-header p { font-size: 15px; }
 
-    .stat-number {
-        font-size: 31px;
-    }
+    .testimonial-card { padding: 28px 20px; }
+    .testimonial-card .quote { font-size: 15px; }
 
-    .stat-label {
-        font-size: 11px;
-        letter-spacing: 1px;
-    }
-
-    .stat-sub {
-        font-size: 11px;
-    }
-
-    .home-highlights {
-        grid-template-columns: 1fr;
-    }
-
-    .section-header {
-        margin-bottom: 32px;
-    }
-
-    .section-header p {
-        font-size: 15px;
-    }
-
-    .testimonial-card {
-        padding: 28px 20px;
-    }
-
-    .testimonial-card .quote {
-        font-size: 15px;
-    }
-
-    .footer-info {
-        font-size: 12px;
-    }
+    .footer-info { font-size: 12px; }
 }
 
-/* REDUCED MOTION ACCESSIBILITY */
+/* ============================================================
+   REDUCED MOTION ACCESSIBILITY
+   ============================================================ */
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;

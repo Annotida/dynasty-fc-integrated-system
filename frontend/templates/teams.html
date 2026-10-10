@@ -12,7 +12,7 @@
             background-image: url('/images/greenhero.png');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            background-attachment: scroll;
             padding: 40px 0 60px;
             position: relative;
         }
@@ -20,7 +20,7 @@
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(6, 15, 31, 0.78);
+            background: rgba(6, 15, 31, 0.35);
             z-index: 0;
         }
         .teams-page .container {
@@ -36,25 +36,26 @@
             padding-left: 15px;
             margin-bottom: 5px;
             color: #fff;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0,0,0,0.9), 0 0 30px rgba(0,0,0,0.6);
         }
         .teams-page .subtitle {
-            color: #a8c8b8;
+            color: #d1e5d8;
             margin-bottom: 30px;
             font-size: 16px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
         }
 
-        /* NEXT MATCH COUNTDOWN BANNER */
         .next-match-banner {
             display: none;
-            background: linear-gradient(135deg, rgba(10,26,51,0.95) 0%, rgba(22,42,74,0.95) 100%);
-            border: 1px solid rgba(184,148,74,0.35);
+            background: linear-gradient(135deg, rgba(10,26,51,0.75) 0%, rgba(22,42,74,0.75) 100%);
+            border: 1px solid rgba(184,148,74,0.4);
             border-left: 4px solid #b8944a;
             border-radius: 14px;
             padding: 22px 26px;
             margin-bottom: 30px;
             box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-            backdrop-filter: blur(6px);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
         .next-match-banner.show { display: block; }
 
@@ -96,6 +97,7 @@
             color: #fff;
             line-height: 1.3;
             margin-bottom: 6px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
         }
         .next-match-banner .nm-teams .vs {
             color: #a8c8b8;
@@ -105,10 +107,11 @@
         }
         .next-match-banner .nm-meta {
             font-size: 13px;
-            color: #a8c8b8;
+            color: #c8d8cd;
             display: flex;
             gap: 14px;
             flex-wrap: wrap;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .next-match-banner .nm-meta span {
             display: inline-flex;
@@ -182,32 +185,34 @@
             font-size: 16px;
             cursor: pointer;
             transition: all 0.3s;
-            background: rgba(255,255,255,0.08);
+            background: rgba(10, 26, 51, 0.5);
             color: #cfd6dd;
-            border: 2px solid rgba(255,255,255,0.2);
+            border: 2px solid rgba(255,255,255,0.25);
             text-transform: uppercase;
             letter-spacing: 1px;
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
         .team-badge:hover {
             border-color: #b8944a;
-            background: rgba(184,148,74,0.15);
+            background: rgba(184,148,74,0.25);
             transform: translateY(-2px);
         }
         .team-badge.active {
             border-color: #b8944a;
             background: #b8944a;
             color: #0a1a33;
-            box-shadow: 0 4px 20px rgba(184,148,74,0.35);
+            box-shadow: 0 4px 20px rgba(184,148,74,0.5);
         }
         .team-badge.active[data-team="dynamights"] {
             border-color: #4aa8e0;
             background: #4aa8e0;
-            box-shadow: 0 4px 20px rgba(74,168,224,0.4);
+            box-shadow: 0 4px 20px rgba(74,168,224,0.5);
         }
         .team-badge.active[data-team="diamonddivas"] {
             border-color: #e8a0c8;
             background: #e8a0c8;
-            box-shadow: 0 4px 20px rgba(232,160,200,0.4);
+            box-shadow: 0 4px 20px rgba(232,160,200,0.5);
         }
         .team-badge .count {
             background: rgba(0,0,0,0.25);
@@ -223,12 +228,13 @@
         }
         .team-section {
             display: none;
-            background: rgba(10, 26, 51, 0.88);
+            background: rgba(10, 26, 51, 0.35);
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 16px;
             padding: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.15);
             margin-bottom: 30px;
         }
         .team-section.active { display: block; }
@@ -240,40 +246,44 @@
             align-items: center;
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 2px solid rgba(255,255,255,0.08);
+            border-bottom: 2px solid rgba(255,255,255,0.15);
         }
         .team-section .team-header h2 {
             font-size: 28px;
             color: #fff;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
         .team-section .team-header h2 i { color: #b8944a; }
         .team-section#team-dynamights .team-header h2 i { color: #4aa8e0; }
         .team-section#team-diamonddivas .team-header h2 i { color: #e8a0c8; }
         .team-section .team-header .team-count {
-            color: #a8c8b8;
+            color: #d8e8dd;
             font-size: 14px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.35);
             padding: 5px 15px;
             border-radius: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .coach-card {
             display: flex;
             align-items: center;
             gap: 20px;
-            background: linear-gradient(135deg, rgba(184,148,74,0.15), rgba(184,148,74,0.05));
-            border: 2px solid rgba(184,148,74,0.3);
+            background: linear-gradient(135deg, rgba(10,26,51,0.65), rgba(22,42,74,0.65));
+            border: 2px solid rgba(184,148,74,0.5);
             border-radius: 14px;
             padding: 18px 22px;
             margin-bottom: 25px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
         .team-section#team-dynamights .coach-card {
-            background: linear-gradient(135deg, rgba(74,168,224,0.15), rgba(74,168,224,0.05));
-            border-color: rgba(74,168,224,0.35);
+            background: linear-gradient(135deg, rgba(10,26,51,0.65), rgba(22,42,74,0.65));
+            border-color: rgba(74,168,224,0.5);
         }
         .team-section#team-diamonddivas .coach-card {
-            background: linear-gradient(135deg, rgba(232,160,200,0.18), rgba(232,160,200,0.05));
-            border-color: rgba(232,160,200,0.35);
+            background: linear-gradient(135deg, rgba(10,26,51,0.65), rgba(22,42,74,0.65));
+            border-color: rgba(232,160,200,0.5);
         }
         .coach-card .coach-avatar {
             width: 60px;
@@ -290,12 +300,13 @@
         .team-section#team-dynamights .coach-avatar { background: #4aa8e0; }
         .team-section#team-diamonddivas .coach-avatar { background: #e8a0c8; }
         .coach-card .coach-info .coach-label {
-            color: #b8944a;
+            color: #d4af6a;
             font-size: 11px;
             text-transform: uppercase;
             letter-spacing: 2px;
             font-weight: 700;
             margin-bottom: 4px;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .team-section#team-dynamights .coach-label { color: #4aa8e0; }
         .team-section#team-diamonddivas .coach-label { color: #e8a0c8; }
@@ -303,11 +314,13 @@
             color: #fff;
             font-size: 20px;
             font-weight: 800;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
         }
         .coach-card .coach-info .coach-role {
-            color: #a8c8b8;
+            color: #c8d8cd;
             font-size: 13px;
             margin-top: 2px;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .tab-container {
             display: flex;
@@ -323,25 +336,33 @@
             font-size: 14px;
             cursor: pointer;
             transition: all 0.3s;
-            background: rgba(255,255,255,0.08);
-            color: #a8c8b8;
+            background: rgba(10, 26, 51, 0.5);
+            color: #c8d8cd;
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
         }
         .tab-btn:hover {
-            background: rgba(255,255,255,0.15);
+            background: rgba(184,148,74,0.25);
             color: #fff;
         }
         .tab-btn.active {
             background: #b8944a;
             color: #0a1a33;
-            box-shadow: 0 4px 15px rgba(184,148,74,0.35);
+            box-shadow: 0 4px 15px rgba(184,148,74,0.5);
+            border-color: #b8944a;
         }
         .team-section#team-dynamights .tab-btn.active {
             background: #4aa8e0;
-            box-shadow: 0 4px 15px rgba(74,168,224,0.4);
+            color: #0a1a33;
+            box-shadow: 0 4px 15px rgba(74,168,224,0.5);
+            border-color: #4aa8e0;
         }
         .team-section#team-diamonddivas .tab-btn.active {
             background: #e8a0c8;
-            box-shadow: 0 4px 15px rgba(232,160,200,0.4);
+            color: #0a1a33;
+            box-shadow: 0 4px 15px rgba(232,160,200,0.5);
+            border-color: #e8a0c8;
         }
         .tab-content { display: none; }
         .tab-content.active { display: block; }
@@ -351,19 +372,20 @@
             gap: 15px;
         }
         .player-card {
-            background: rgba(255,255,255,0.06);
-            backdrop-filter: blur(5px);
+            background: rgba(10, 26, 51, 0.55);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             border-radius: 12px;
             padding: 20px 15px;
             text-align: center;
             transition: all 0.3s;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
             position: relative;
         }
         .player-card:hover {
             transform: translateY(-5px);
-            background: rgba(255,255,255,0.12);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.35);
+            background: rgba(10, 26, 51, 0.7);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.5);
         }
         .player-card .jersey-badge {
             position: absolute;
@@ -379,39 +401,41 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(184,148,74,0.4);
-            border: 2px solid rgba(255,255,255,0.25);
+            box-shadow: 0 4px 12px rgba(184,148,74,0.6);
+            border: 2px solid rgba(255,255,255,0.35);
         }
         .player-card .player-avatar {
             width: 65px;
             height: 65px;
             border-radius: 50%;
-            background: rgba(184,148,74,0.2);
+            background: rgba(184,148,74,0.3);
             color: #d4af6a;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 12px;
             font-size: 26px;
-            border: 2px solid rgba(184,148,74,0.3);
+            border: 2px solid rgba(184,148,74,0.5);
         }
-        .player-card .player-avatar.position-goalkeeper { background: rgba(59,130,246,0.2); color: #60a5fa; border-color: rgba(59,130,246,0.4); }
-        .player-card .player-avatar.position-defender   { background: rgba(34,197,94,0.2);  color: #4ade80; border-color: rgba(34,197,94,0.4); }
-        .player-card .player-avatar.position-midfielder { background: rgba(245,158,11,0.2); color: #fbbf24; border-color: rgba(245,158,11,0.4); }
-        .player-card .player-avatar.position-forward    { background: rgba(239,68,68,0.2);  color: #f87171; border-color: rgba(239,68,68,0.4); }
+        .player-card .player-avatar.position-goalkeeper { background: rgba(59,130,246,0.3); color: #60a5fa; border-color: rgba(59,130,246,0.6); }
+        .player-card .player-avatar.position-defender   { background: rgba(34,197,94,0.3);  color: #4ade80; border-color: rgba(34,197,94,0.6); }
+        .player-card .player-avatar.position-midfielder { background: rgba(245,158,11,0.3); color: #fbbf24; border-color: rgba(245,158,11,0.6); }
+        .player-card .player-avatar.position-forward    { background: rgba(239,68,68,0.3);  color: #f87171; border-color: rgba(239,68,68,0.6); }
         .player-card .player-name {
             font-weight: 700;
             font-size: 16px;
             color: #fff;
             margin-bottom: 3px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
         }
         .player-card .player-position {
             font-size: 13px;
-            color: #a8c8b8;
+            color: #c8d8cd;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 8px;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .player-card .injury-badge {
             display: inline-block;
@@ -425,17 +449,19 @@
         .no-players {
             text-align: center;
             padding: 30px;
-            color: #a8c8b8;
+            color: #c8d8cd;
             font-size: 16px;
             grid-column: 1 / -1;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .matches-section {
             margin-top: 30px;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(5px);
+            background: rgba(10, 26, 51, 0.5);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
             border-radius: 12px;
             padding: 25px;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.15);
         }
         .matches-section h3 {
             font-size: 20px;
@@ -443,17 +469,18 @@
             margin-bottom: 15px;
             border-left: 5px solid #b8944a;
             padding-left: 15px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
         }
         .match-card {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 20px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             transition: background 0.3s;
             border-radius: 8px;
         }
-        .match-card:hover { background: rgba(255,255,255,0.05); }
+        .match-card:hover { background: rgba(255,255,255,0.08); }
         .match-card:last-child { border-bottom: none; }
         .match-card .match-info {
             display: flex;
@@ -465,10 +492,12 @@
             font-weight: 600;
             color: #d4af6a;
             min-width: 80px;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .match-card .match-info .match-teams {
             font-weight: 600;
             color: #fff;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.9);
         }
         .match-card .match-info .match-teams .vs {
             color: #a8c8b8;
@@ -477,20 +506,21 @@
         }
         .match-card .match-info .match-venue {
             font-size: 13px;
-            color: #a8c8b8;
+            color: #c8d8cd;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
         .match-card .match-result {
             font-weight: 700;
             font-size: 18px;
         }
-        .match-card .match-result .win { color: #28a745; }
-        .match-card .match-result .loss { color: #dc3545; }
+        .match-card .match-result .win { color: #4ade80; }
+        .match-card .match-result .loss { color: #f87171; }
         .match-card .match-result .draw { color: #d4af6a; }
         .match-card .btn-view-match {
             padding: 8px 20px;
             border: 2px solid #b8944a;
             border-radius: 25px;
-            background: transparent;
+            background: rgba(10, 26, 51, 0.5);
             cursor: pointer;
             font-weight: 600;
             font-size: 13px;
@@ -505,8 +535,9 @@
         .no-matches {
             text-align: center;
             padding: 20px;
-            color: #a8c8b8;
+            color: #c8d8cd;
             font-size: 14px;
+            text-shadow: 0 1px 5px rgba(0,0,0,0.8);
         }
 
         .toast-notice {
@@ -786,7 +817,6 @@
             <h1>⚽ Our Teams</h1>
             <p class="subtitle">Discover the champions of Dynasty FC</p>
 
-            <!-- NEXT MATCH COUNTDOWN BANNER -->
             <div class="next-match-banner" id="nextMatchBanner">
                 <div class="nm-label">
                     <i class="fas fa-clock"></i> Next Match
