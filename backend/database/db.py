@@ -3,7 +3,6 @@ import os
 from dotenv import load_dotenv
 import sys
 
-# Add the parent folder to the path so Python can find .env
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 load_dotenv()
 
@@ -15,6 +14,7 @@ def get_db_connection():
     user = os.getenv("DB_USER", "root")
     password = os.getenv("DB_PASSWORD")
     database = os.getenv("DB_NAME", "dynasty_integrated_system")
+    use_ssl = os.getenv("DB_SSL", "false").lower() == "true"
 
     config = {
         "host": host,
@@ -22,12 +22,16 @@ def get_db_connection():
         "user": user,
         "password": password,
         "database": database,
-        "auth_plugin": "caching_sha2_password",  # Match MySQL 8 default
         "use_pure": True,
-        "ssl_disabled": False,  # ✅ Enable SSL (works on local MySQL 8 too)
-        "ssl_verify_cert": False,  # Don't fail on self-signed local certs
-        "ssl_verify_identity": False,
+        "connection_timeout": 30,
     }
+
+    if use_ssl:
+        config["ssl_disabled"] = False
+        config["ssl_verify_cert"] = False
+        config["ssl_verify_identity"] = False
+    else:
+        config["ssl_disabled"] = True
 
     return mysql.connector.connect(**config)
 
@@ -39,10 +43,10 @@ def test_connection():
         cursor = conn.cursor()
         cursor.execute("SELECT 1")
         cursor.fetchall()
-        print("✅ Database connected successfully")
+        print("Database connected successfully")
         cursor.close()
         conn.close()
         return True
     except Exception as e:
-        print(f"❌ Database connection failed: {e}")
+        print(f"Database connection failed: {e}")
         return False
