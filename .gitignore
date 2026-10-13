@@ -60,3 +60,40 @@ htmlcov/
 *.bak
 *.backup
 backup/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+
+# Local database files
+*.sqlite3
+*.db
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Word documents accidentally stored alongside Flask templates
+frontend/templates/*.docx
+
+# Temporary files accidentally created in the project root
+/git
+/main
+/type
+
+# Word documents stored in the project
+*.docx
